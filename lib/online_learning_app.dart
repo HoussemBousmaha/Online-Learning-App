@@ -11,7 +11,7 @@ class OnlineLearningApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      home: const OnboardingScreen1(),
+      home: const OnboardingScreensPageView(),
     );
   }
 }
