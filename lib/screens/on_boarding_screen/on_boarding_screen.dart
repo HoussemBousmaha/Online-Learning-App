@@ -15,11 +15,13 @@ class OnboardingScreensPageView extends HookWidget {
       alignment: Alignment.center,
       children: [
         PageView(
+          physics: const ClampingScrollPhysics(),
           onPageChanged: (value) {
             selectedIndexNotifier.value = value;
           },
           children: const [
             OnboardingScreen1(),
+            OnboardingScreen2(),
           ],
         ),
         OnboardingNavigationRow(
@@ -61,6 +63,50 @@ class OnboardingScreen1 extends StatelessWidget {
             ),
             const Text(
               'find your way to learning',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+            const SizedBox(height: 60),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class OnboardingScreen2 extends StatelessWidget {
+  const OnboardingScreen2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          children: [
+            const SizedBox(height: 90),
+            const SkipButton(),
+            const SizedBox(height: 19),
+            SvgPicture.asset('$onBoardingIllustrationsPath-2.svg'),
+            const SizedBox(height: 38),
+            const Text(
+              'Quick and easy',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w700, fontSize: 22),
+            ),
+            const Text(
+              'learning',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w700, fontSize: 22),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              'Easy and fast learning at',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+            const Text(
+              'any time to help you',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+            const Text(
+              'improve various skills',
               style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w400, fontSize: 16),
             ),
             const SizedBox(height: 60),
