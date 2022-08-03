@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
 import 'package:online_learning_app/screens/on_boarding_screen/buttons/skip_button.dart';
 import 'package:online_learning_app/screens/on_boarding_screen/widgets/onboarding_navigation_row.dart';
@@ -22,11 +23,12 @@ class OnboardingScreensPageView extends HookWidget {
           children: const [
             OnboardingScreen1(),
             OnboardingScreen2(),
+            OnboardingScreen3(),
           ],
         ),
         OnboardingNavigationRow(
           selectedIndex: selectedIndexNotifier.value,
-          pageCount: 2,
+          pageCount: 3,
         ),
       ],
     );
@@ -110,6 +112,83 @@ class OnboardingScreen2 extends StatelessWidget {
               style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w400, fontSize: 16),
             ),
             const SizedBox(height: 60),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class OnboardingScreen3 extends StatelessWidget {
+  const OnboardingScreen3({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          children: [
+            const SizedBox(height: 142),
+            SvgPicture.asset('$onBoardingIllustrationsPath-3.svg'),
+            const SizedBox(height: 38),
+            const Text(
+              'Create your own',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w700, fontSize: 22),
+            ),
+            const Text(
+              'study plan',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w700, fontSize: 22),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              'Study according to the',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+            const Text(
+              'study plan, make study',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+            const Text(
+              'more motivated',
+              style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+            const SizedBox(height: 150),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                PrimaryButton(
+                  onPressed: () {},
+                  height: 50,
+                  width: 160,
+                  backgroundColor: primaryColor,
+                  child: const Text(
+                    'Sign up',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                PrimaryButton(
+                  onPressed: () {},
+                  height: 50,
+                  width: 160,
+                  backgroundColor: Colors.white,
+                  border: Border.all(color: primaryColor),
+                  child: const Text(
+                    'Log in',
+                    style: TextStyle(
+                      color: primaryColor,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
