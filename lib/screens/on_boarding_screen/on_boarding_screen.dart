@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
 import 'package:online_learning_app/screens/on_boarding_screen/buttons/skip_button.dart';
-import 'package:online_learning_app/screens/on_boarding_screen/widgets/onboarding_navigation_row.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreensPageView extends HookWidget {
   const OnboardingScreensPageView({Key? key}) : super(key: key);
@@ -12,10 +12,12 @@ class OnboardingScreensPageView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final selectedIndexNotifier = useState<int>(0);
+    final pageController = usePageController();
     return Stack(
       alignment: Alignment.center,
       children: [
         PageView(
+          controller: pageController,
           physics: const ClampingScrollPhysics(),
           onPageChanged: (value) {
             selectedIndexNotifier.value = value;
@@ -26,9 +28,23 @@ class OnboardingScreensPageView extends HookWidget {
             OnboardingScreen3(),
           ],
         ),
-        OnboardingNavigationRow(
-          selectedIndex: selectedIndexNotifier.value,
-          pageCount: 3,
+        Container(
+          alignment: const Alignment(0, 0.85),
+          child: SmoothPageIndicator(
+            controller: pageController,
+            count: 3,
+            effect: const WormEffect(
+              activeDotColor: primaryColor,
+              dotColor: secondaryNavigationColor,
+            ),
+            onDotClicked: (index) {
+              pageController.animateToPage(
+                index,
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.ease,
+              );
+            },
+          ),
         ),
       ],
     );
