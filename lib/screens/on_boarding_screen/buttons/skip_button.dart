@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:online_learning_app/constants.dart';
-import 'package:online_learning_app/screens/on_boarding_screen/on_boarding_screen.dart';
+import 'package:online_learning_app/general_providers.dart';
 
 class SkipButton extends ConsumerWidget {
   const SkipButton({

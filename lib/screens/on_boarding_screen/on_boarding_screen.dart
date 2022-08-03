@@ -3,12 +3,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
+import 'package:online_learning_app/general_providers.dart';
 import 'package:online_learning_app/screens/on_boarding_screen/buttons/skip_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-final pageControllerProvider = Provider(
-  (ref) => PageController(),
-);
 
 class OnboardingScreensPageView extends ConsumerWidget {
   const OnboardingScreensPageView({Key? key}) : super(key: key);
