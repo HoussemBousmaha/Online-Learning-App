@@ -153,7 +153,7 @@ class OnboardingScreen3 extends StatelessWidget {
               'more motivated',
               style: TextStyle(color: titleTextColor, fontWeight: FontWeight.w400, fontSize: 16),
             ),
-            const SizedBox(height: 150),
+            const SizedBox(height: 100),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [

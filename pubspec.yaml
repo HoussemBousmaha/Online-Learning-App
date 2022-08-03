@@ -16,6 +16,7 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_svg: ^1.1.1+1
   flutter_hooks: ^0.18.5+1
+  action_slider: ^0.6.0
 
 dev_dependencies:
   flutter_test:
