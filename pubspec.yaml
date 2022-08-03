@@ -18,6 +18,7 @@ dependencies:
   flutter_hooks: ^0.18.5+1
   action_slider: ^0.6.0
   smooth_page_indicator: ^1.0.0+2
+  hooks_riverpod: ^1.0.4
 
 dev_dependencies:
   flutter_test:

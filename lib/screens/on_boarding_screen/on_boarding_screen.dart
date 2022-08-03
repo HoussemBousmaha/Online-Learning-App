@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
 import 'package:online_learning_app/screens/on_boarding_screen/buttons/skip_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnboardingScreensPageView extends HookWidget {
+final pageControllerProvider = Provider(
+  (ref) => PageController(),
+);
+
+class OnboardingScreensPageView extends ConsumerWidget {
   const OnboardingScreensPageView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final selectedIndexNotifier = useState<int>(0);
-    final pageController = usePageController();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final pageController = ref.watch(pageControllerProvider);
     return Stack(
       alignment: Alignment.center,
       children: [
         PageView(
           controller: pageController,
           physics: const ClampingScrollPhysics(),
-          onPageChanged: (value) {
-            selectedIndexNotifier.value = value;
-          },
           children: const [
             OnboardingScreen1(),
             OnboardingScreen2(),

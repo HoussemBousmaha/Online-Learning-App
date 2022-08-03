@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:online_learning_app/constants.dart';
+import 'package:online_learning_app/screens/on_boarding_screen/on_boarding_screen.dart';
 
-class SkipButton extends StatelessWidget {
+class SkipButton extends ConsumerWidget {
   const SkipButton({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Align(
       alignment: Alignment.topRight,
       child: Container(
         margin: const EdgeInsets.only(right: 20),
         child: InkWell(
           borderRadius: BorderRadius.circular(5),
-          onTap: () {},
+          onTap: () {
+            ref.read(pageControllerProvider).animateToPage(
+                  2,
+                  duration: const Duration(milliseconds: 600),
+                  curve: Curves.ease,
+                );
+          },
           child: const Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 20.0,
