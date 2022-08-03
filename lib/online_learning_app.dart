@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:online_learning_app/screens/on_boarding_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:online_learning_app/screens/on_boarding_screen/on_boarding_screen.dart';
 
 class OnlineLearningApp extends StatelessWidget {
   const OnlineLearningApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnboardingScreen1(),
+      theme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme(),
+      ),
+      home: const OnboardingScreen1(),
     );
   }
 }
