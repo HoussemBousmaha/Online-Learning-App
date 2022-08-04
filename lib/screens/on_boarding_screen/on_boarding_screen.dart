@@ -164,11 +164,9 @@ class OnboardingScreen3 extends StatelessWidget {
                 children: [
                   PrimaryButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacementNamed(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignUpScreen(),
-                        ),
+                        SignUpScreen.routeName,
                       );
                     },
                     height: SizeConfig.height(50),
