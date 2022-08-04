@@ -7,9 +7,12 @@ import 'package:online_learning_app/general_providers.dart';
 import 'package:online_learning_app/responsive.dart';
 import 'package:online_learning_app/screens/on_boarding_screen/buttons/skip_button.dart';
 import 'package:online_learning_app/screens/on_boarding_screen/widgets/worm_page_indicator.dart';
+import 'package:online_learning_app/screens/sign_up_screen/sign_up_screen.dart';
 
 class OnboardingScreensPageView extends ConsumerWidget {
   const OnboardingScreensPageView({Key? key}) : super(key: key);
+
+  static const String routeName = '/onboarding-screen/';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -160,7 +163,14 @@ class OnboardingScreen3 extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   PrimaryButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignUpScreen(),
+                        ),
+                      );
+                    },
                     height: SizeConfig.height(50),
                     width: SizeConfig.width(160),
                     backgroundColor: primaryColor,
