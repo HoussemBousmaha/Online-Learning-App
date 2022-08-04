@@ -5,14 +5,17 @@ class PrimaryButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.height,
-    required this.width,
-    required this.backgroundColor,
+    this.width = double.infinity,
+    this.backgroundColor = Colors.white,
     this.border,
-    required this.child,
+    this.borderRadius = 12,
+    this.child,
   }) : super(key: key);
 
-  final double height, width;
-  final Widget child;
+  final double height;
+  final double width;
+  final Widget? child;
+  final double borderRadius;
   final Color backgroundColor;
   final Border? border;
   final VoidCallback onPressed;
@@ -27,7 +30,7 @@ class PrimaryButton extends StatelessWidget {
         decoration: BoxDecoration(
           border: border,
           color: backgroundColor,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(borderRadius),
         ),
         alignment: Alignment.center,
         child: child,
