@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
 import 'package:online_learning_app/responsive.dart';
+import 'package:online_learning_app/screens/login_screen/login_screen.dart';
 
 class SignUpScreen extends HookWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -79,27 +80,7 @@ class SignUpScreen extends HookWidget {
                           ],
                         ),
                         SizeConfig.verticalHeight(25),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Text(
-                              'Already have an account?',
-                              style: TextStyle(color: sublitleTextColor),
-                            ),
-                            SizeConfig.horizontalWidth(5),
-                            TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                primary: primaryColor,
-                              ), //ripple color
-                              child: const Text(
-                                'Log in',
-                                style: TextStyle(color: primaryColor),
-                              ),
-                            )
-                          ],
-                        )
+                        buildAlreadyHaveAccountHeader(context),
                       ],
                     ),
                   ),
@@ -109,6 +90,35 @@ class SignUpScreen extends HookWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Row buildAlreadyHaveAccountHeader(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const Text(
+          'Already have an account?',
+          style: TextStyle(color: sublitleTextColor),
+        ),
+        SizeConfig.horizontalWidth(5),
+        TextButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(
+              context,
+              LoginScreen.routeName,
+            );
+          },
+          style: TextButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            primary: primaryColor,
+          ), //ripple color
+          child: const Text(
+            'Log in',
+            style: TextStyle(color: primaryColor),
+          ),
+        )
+      ],
     );
   }
 

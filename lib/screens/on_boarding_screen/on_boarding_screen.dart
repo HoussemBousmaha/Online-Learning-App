@@ -5,6 +5,7 @@ import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
 import 'package:online_learning_app/general_providers.dart';
 import 'package:online_learning_app/responsive.dart';
+import 'package:online_learning_app/screens/login_screen/login_screen.dart';
 import 'package:online_learning_app/screens/on_boarding_screen/buttons/skip_button.dart';
 import 'package:online_learning_app/screens/on_boarding_screen/widgets/worm_page_indicator.dart';
 import 'package:online_learning_app/screens/sign_up_screen/sign_up_screen.dart';
@@ -183,7 +184,12 @@ class OnboardingScreen3 extends StatelessWidget {
                   ),
                   SizeConfig.horizontalWidth(10),
                   PrimaryButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(
+                        context,
+                        LoginScreen.routeName,
+                      );
+                    },
                     height: SizeConfig.height(50),
                     width: SizeConfig.width(160),
                     backgroundColor: Colors.white,
