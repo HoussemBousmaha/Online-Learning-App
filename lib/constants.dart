@@ -8,3 +8,5 @@ const Color secondaryNavigationColor = Color(0xFFEAEAFF);
 const Color backgroundColor = Color(0xFFF0F0F2);
 
 const String onBoardingIllustrationsPath = 'assets/illustrations/illustration';
+const String googleLogoPath = 'assets/pictures/google-logo.svg';
+const String facebookLogoPath = 'assets/pictures/facebook-logo.svg';

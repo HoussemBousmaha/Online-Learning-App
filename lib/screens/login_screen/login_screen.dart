@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
@@ -73,6 +74,23 @@ class LoginScreen extends StatelessWidget {
                       ),
                       SizeConfig.verticalHeight(26),
                       buildDontHaveAccountHeader(context),
+                      SizeConfig.verticalHeight(23),
+                      buildOrLoginWithHeader(),
+                      SizeConfig.verticalHeight(28),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          GestureDetector(
+                            onTap: () {},
+                            child: SvgPicture.asset(googleLogoPath),
+                          ),
+                          SizeConfig.horizontalWidth(45),
+                          GestureDetector(
+                            onTap: () {},
+                            child: SvgPicture.asset(facebookLogoPath),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -81,6 +99,31 @@ class LoginScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Row buildOrLoginWithHeader() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          height: 1,
+          width: SizeConfig.width(100),
+          color: explanationTextColor,
+        ),
+        const Text(
+          'Or login with',
+          style: TextStyle(
+            color: sublitleTextColor,
+            fontSize: 12,
+          ),
+        ),
+        Container(
+          height: 1,
+          width: SizeConfig.width(100),
+          color: explanationTextColor,
+        ),
+      ],
     );
   }
 
