@@ -46,7 +46,7 @@ class SignUpScreen extends HookWidget {
                         SizeConfig.verticalHeight(24),
                         PrimaryButton(
                           onPressed: () {},
-                          height: 60,
+                          height: 50,
                           width: double.infinity,
                           backgroundColor: primaryColor,
                           child: const Text(
