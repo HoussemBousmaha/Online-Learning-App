@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:online_learning_app/buttons/digit_button.dart';
 import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
 import 'package:online_learning_app/responsive.dart';
@@ -96,7 +97,7 @@ class EnterPhoneScreen extends HookWidget {
                       Wrap(
                         children: [
                           for (int i = 1; i <= 9; i++)
-                            digitButton(
+                            DigitButton(
                               onPressed: () {
                                 addDigitToPhoneNumber(phoneNumberNotifier, '$i');
                               },
@@ -108,13 +109,13 @@ class EnterPhoneScreen extends HookWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           SizedBox(height: SizeConfig.size.width / 4, width: SizeConfig.size.width / 3),
-                          digitButton(
+                          DigitButton(
                             onPressed: () {
                               addDigitToPhoneNumber(phoneNumberNotifier, '0');
                             },
                             child: const Text('0', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
                           ),
-                          digitButton(
+                          DigitButton(
                             onPressed: () {
                               removeLastCharacter(phoneNumberNotifier);
                             },
@@ -129,19 +130,6 @@ class EnterPhoneScreen extends HookWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  TextButton digitButton({required VoidCallback onPressed, required Widget child}) {
-    return TextButton(
-      style: TextButton.styleFrom(padding: EdgeInsets.zero, primary: titleTextColor),
-      onPressed: onPressed,
-      child: Container(
-        height: SizeConfig.size.width / 4,
-        width: SizeConfig.size.width / 3,
-        alignment: Alignment.center,
-        child: child,
       ),
     );
   }
