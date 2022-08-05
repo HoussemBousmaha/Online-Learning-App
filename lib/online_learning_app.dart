@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning_app/constants.dart';
+import 'package:online_learning_app/screens/enter_phone_screen/enter_phone_screen.dart';
 import 'package:online_learning_app/screens/login_screen/login_screen.dart';
 
 import 'package:online_learning_app/screens/on_boarding_screen/on_boarding_screen.dart';
@@ -19,7 +20,7 @@ class OnlineLearningApp extends StatelessWidget {
           floatingLabelBehavior: FloatingLabelBehavior.always,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(color: explanationTextColor),
+            borderSide: const BorderSide(color: descriptionTextColor),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
@@ -28,7 +29,7 @@ class OnlineLearningApp extends StatelessWidget {
           suffixIconColor: titleTextColor,
         ),
       ),
-      home: const OnboardingScreensPageView(),
+      home: const EnterPhoneScreen(),
       routes: {
         OnboardingScreensPageView.routeName: (context) => const OnboardingScreensPageView(),
         SignUpScreen.routeName: (context) => const SignUpScreen(),

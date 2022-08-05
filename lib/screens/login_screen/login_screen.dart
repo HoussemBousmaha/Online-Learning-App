@@ -109,7 +109,7 @@ class LoginScreen extends StatelessWidget {
         Container(
           height: 1,
           width: SizeConfig.width(100),
-          color: explanationTextColor,
+          color: descriptionTextColor,
         ),
         const Text(
           'Or login with',
@@ -121,7 +121,7 @@ class LoginScreen extends StatelessWidget {
         Container(
           height: 1,
           width: SizeConfig.width(100),
-          color: explanationTextColor,
+          color: descriptionTextColor,
         ),
       ],
     );

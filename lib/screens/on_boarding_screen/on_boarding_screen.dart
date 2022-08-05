@@ -52,7 +52,7 @@ class OnboardingScreen1 extends StatelessWidget {
               SizeConfig.verticalHeight(90),
               const SkipButton(),
               SizeConfig.verticalHeight(20),
-              SvgPicture.asset('$onBoardingIllustrationsPath-1.svg'),
+              SvgPicture.asset('$illustrationPath-1.svg'),
               SizeConfig.verticalHeight(40),
               const Text(
                 'Numerous free',
@@ -93,7 +93,7 @@ class OnboardingScreen2 extends StatelessWidget {
               SizeConfig.verticalHeight(90),
               const SkipButton(),
               SizeConfig.verticalHeight(20),
-              SvgPicture.asset('$onBoardingIllustrationsPath-2.svg'),
+              SvgPicture.asset('$illustrationPath-2.svg'),
               SizeConfig.verticalHeight(40),
               const Text(
                 'Quick and easy',
@@ -136,7 +136,7 @@ class OnboardingScreen3 extends StatelessWidget {
           child: Column(
             children: [
               SizeConfig.verticalHeight(140),
-              SvgPicture.asset('$onBoardingIllustrationsPath-3.svg'),
+              SvgPicture.asset('$illustrationPath-3.svg'),
               SizeConfig.verticalHeight(40),
               const Text(
                 'Create your own',

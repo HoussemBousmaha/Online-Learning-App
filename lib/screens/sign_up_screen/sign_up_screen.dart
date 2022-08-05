@@ -65,7 +65,7 @@ class SignUpScreen extends HookWidget {
                               height: 20,
                               width: 20,
                               backgroundColor: Colors.white,
-                              border: Border.all(color: explanationTextColor),
+                              border: Border.all(color: descriptionTextColor),
                               borderRadius: 4,
                               child: AnimatedSwitcher(
                                 duration: const Duration(milliseconds: 400),
@@ -145,7 +145,7 @@ class SignUpScreen extends HookWidget {
           child: const Text(
             'Enter your details below & free sign up',
             style: TextStyle(
-              color: explanationTextColor,
+              color: descriptionTextColor,
               fontWeight: FontWeight.w700,
               fontSize: 12,
             ),
