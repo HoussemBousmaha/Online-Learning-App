@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning_app/constants.dart';
+import 'package:online_learning_app/screens/confirm_phone_number_screen/confirm_phone_number_screen.dart';
 import 'package:online_learning_app/screens/enter_phone_screen/enter_phone_screen.dart';
 import 'package:online_learning_app/screens/login_screen/login_screen.dart';
 
@@ -34,6 +35,7 @@ class OnlineLearningApp extends StatelessWidget {
         OnboardingScreensPageView.routeName: (context) => const OnboardingScreensPageView(),
         SignUpScreen.routeName: (context) => const SignUpScreen(),
         LoginScreen.routeName: (context) => const LoginScreen(),
+        ConfirmPhoneNumberScreen.routeName: (context) => const ConfirmPhoneNumberScreen(),
       },
     );
   }

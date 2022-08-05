@@ -6,6 +6,7 @@ import 'package:online_learning_app/buttons/digit_button.dart';
 import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
 import 'package:online_learning_app/responsive.dart';
+import 'package:online_learning_app/screens/confirm_phone_number_screen/confirm_phone_number_screen.dart';
 
 class EnterPhoneScreen extends HookWidget {
   const EnterPhoneScreen({Key? key}) : super(key: key);
@@ -78,7 +79,13 @@ class EnterPhoneScreen extends HookWidget {
                             ),
                             const Spacer(),
                             PrimaryButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  ConfirmPhoneNumberScreen.routeName,
+                                  arguments: phoneNumberNotifier.value.substring(1),
+                                );
+                              },
                               height: SizeConfig.height(50),
                               width: SizeConfig.width(125),
                               backgroundColor: primaryColor,
