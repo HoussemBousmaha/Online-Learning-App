@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:online_learning_app/buttons/primary_button.dart';
 import 'package:online_learning_app/constants.dart';
 import 'package:online_learning_app/responsive.dart';
+import 'package:online_learning_app/screens/enter_phone_screen/enter_phone_screen.dart';
 import 'package:online_learning_app/screens/sign_up_screen/sign_up_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -60,7 +61,9 @@ class LoginScreen extends StatelessWidget {
                       ),
                       SizeConfig.verticalHeight(13),
                       PrimaryButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, EnterPhoneScreen.routeName);
+                        },
                         backgroundColor: primaryColor,
                         height: SizeConfig.height(50),
                         child: const Text(
